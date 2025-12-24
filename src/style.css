@@ -68,10 +68,11 @@ canvas.webgl {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 0;
+    z-index: 10;
     pointer-events: none;
     padding: 40px;
     animation: fadeInScale 2s ease-out;
+    opacity: 0.95;
 }
 
 @keyframes fadeInScale {
