@@ -11,6 +11,7 @@ import Floor from './Floor.js';
 import Skybox from './Skybox.js';
 import Particles from './Particles.js';
 import Fireflies from './Fireflies.js';
+import GreetingText from './GreetingText.js';
 import { PopArtShader } from './PopArtShader.js';
 
 class App {
@@ -43,6 +44,7 @@ class App {
         this.skybox = new Skybox(this.scene);
         this.particles = new Particles(this.scene);
         this.fireflies = new Fireflies(this.scene);
+        this.greetingText = new GreetingText(this.scene);
         this.popArtPass = null;
         
         this.loadAssets().then(() => {
@@ -171,7 +173,8 @@ class App {
             this.floor.load(),
             this.skybox.load(),
             this.particles.load(),
-            this.fireflies.load()
+            this.fireflies.load(),
+            this.greetingText.load()
         ]);
     }
 
@@ -202,6 +205,10 @@ class App {
 
         if (this.fireflies) {
             this.fireflies.update(deltaTime, elapsedTime);
+        }
+
+        if (this.greetingText) {
+            this.greetingText.update(deltaTime, elapsedTime);
         }
 
         if (this.floor) {
